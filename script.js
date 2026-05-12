@@ -68,7 +68,14 @@ function animateResult() {
         display.style.color = 'white';
     }, 500);
 }
-
+window.addEventListener('load', () => {
+    const curtain = document.querySelector('.curtain');
+    if (curtain) {
+        setTimeout(() => {
+            curtain.style.display = 'none';
+        }, 1500);
+    }
+});
 function animateError() {
     display.style.color = '#ff0000';
     setTimeout(() => {
