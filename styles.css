@@ -29,10 +29,43 @@ body {
     animation-delay: 0.12s;
 }
 
+.curtain-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 0.08em;
+    z-index: 1;
+    animation: textFall 1.4s ease-in-out forwards;
+}
+
+.curtain-text h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.6);
+}
+
+.curtain-text p {
+    margin: 16px 0 0;
+    font-size: 1.05rem;
+    opacity: 0.9;
+}
+
 @keyframes curtainDrop {
     0% { transform: translateY(-100%); }
     70% { transform: translateY(0); }
     100% { transform: translateY(100%); }
+}
+
+@keyframes textFall {
+    0% { opacity: 1; transform: translateY(0); }
+    70% { opacity: 1; transform: translateY(20px); }
+    100% { opacity: 0; transform: translateY(120%); }
 }
 
 .hero {
